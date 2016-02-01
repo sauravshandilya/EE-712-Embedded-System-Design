@@ -1,17 +1,65 @@
 
+**** Build of configuration Debug for project Lab-2B ****
+
+/opt/ti/ccsv6/utils/bin/gmake -k all 
+Building file: ../sample.asm
+Invoking: ARM Compiler
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_TM4C1230H6PM --display_error_number --diag_warning=225 --diag_wrap=off -k --asm_listing --preproc_with_compile --preproc_dependency="sample.pp"  "../sample.asm"
+"../sample.asm", ERROR!   at line 115: [E0200] Destination must be on a 4 byte boundary
+	    LDR R0, ONESEC                ; R0 = FIFTHSEC (delay 0.2 second) ; [ORIG 16-BIT INS]
+
+8 Assembly Errors, No Assembly Warnings
+"../sample.asm", ERROR!   at line 129: [E0200] Destination must be on a 4 byte boundary
+		LDR R0, ONESEC                ; R0 = ONESEC (delay 1 second) ; [ORIG 16-BIT INS]
+
+"../sample.asm", ERROR!   at line 143: [E0200] Destination must be on a 4 byte boundary
+		LDR R0, ONESEC                ; R0 = ONESEC (delay 1 second) ; [ORIG 16-BIT INS]
+
+"../sample.asm", ERROR!   at line 167: [E0001] Undefined symbol
+		BEQ addition
+
+"../sample.asm", ERROR!   at line 170: [E0001] Undefined symbol
+		BEQ subtraction
+
+"../sample.asm", ERROR!   at line 173: [E0001] Undefined symbol
+		BEQ multiply
+
+"../sample.asm", ERROR!   at line 180: [E0200] Destination must be on a 4 byte boundary
+		LDR R0, ONESEC                ; R0 = ONESEC (delay 1 second) ; [ORIG 16-BIT INS]
+
+"../sample.asm", ERROR!   at EOF: [E0300] The following symbols are undefined:
+  addition
+  multiply
+  subtraction
+
+Errors in Source - Assembler Aborted
+gmake: *** [sample.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+>> Compilation failure
+
+**** Build Finished ****
+
 **** Build of configuration Debug for project Lab-1 ****
 
 /opt/ti/ccsv6/utils/bin/gmake -k all 
-Building file: ../Lab1-HW1b.c
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Lab-2B ****
+
+/opt/ti/ccsv6/utils/bin/gmake -k all 
+Building file: ../sample.asm
 Invoking: ARM Compiler
-"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="Lab1-HW1b.pp"  "../Lab1-HW1b.c"
-Finished building: ../Lab1-HW1b.c
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_TM4C1230H6PM --display_error_number --diag_warning=225 --diag_wrap=off -k --asm_listing --preproc_with_compile --preproc_dependency="sample.pp"  "../sample.asm"
+Finished building: ../sample.asm
  
-Building target: Lab-1.out
+Building target: Lab-2B.out
 Invoking: ARM Linker
-"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off -z -m"Lab-1.map" --heap_size=0 --stack_size=512 -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Lab-1_linkInfo.xml" --rom_model -o "Lab-1.out" "./Lab1-HW1b.obj" "./tm4c123gh6pm_startup_ccs.obj" "/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib" "../tm4c123gh6pm.cmd"  -l"libc.a" 
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C1230H6PM --display_error_number --diag_warning=225 --diag_wrap=off -k --asm_listing -z -m"Lab-2B.map" --heap_size=0 --stack_size=512 -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Lab-2B_linkInfo.xml" --rom_model -o "Lab-2B.out" "./sample.obj" "./tm4c1230h6pm_startup_ccs.obj" "/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib" "../tm4c1230h6pm.cmd"  -l"libc.a" 
 <Linking>
-Finished building target: Lab-1.out
+Finished building target: Lab-2B.out
  
 
 **** Build Finished ****
@@ -23,19 +71,19 @@ gmake: Nothing to be done for `all'.
 
 **** Build Finished ****
 
-**** Build of configuration Debug for project Lab-1 ****
+**** Build of configuration Debug for project Lab-2B ****
 
 /opt/ti/ccsv6/utils/bin/gmake -k all 
-Building file: ../Lab1-HW1b.c
+Building file: ../sample.asm
 Invoking: ARM Compiler
-"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="Lab1-HW1b.pp"  "../Lab1-HW1b.c"
-Finished building: ../Lab1-HW1b.c
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_TM4C1230H6PM --display_error_number --diag_warning=225 --diag_wrap=off -k --asm_listing --preproc_with_compile --preproc_dependency="sample.pp"  "../sample.asm"
+Finished building: ../sample.asm
  
-Building target: Lab-1.out
+Building target: Lab-2B.out
 Invoking: ARM Linker
-"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off -z -m"Lab-1.map" --heap_size=0 --stack_size=512 -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Lab-1_linkInfo.xml" --rom_model -o "Lab-1.out" "./Lab1-HW1b.obj" "./tm4c123gh6pm_startup_ccs.obj" "/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib" "../tm4c123gh6pm.cmd"  -l"libc.a" 
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me -g --gcc --define=ccs="ccs" --define=PART_TM4C1230H6PM --display_error_number --diag_warning=225 --diag_wrap=off -k --asm_listing -z -m"Lab-2B.map" --heap_size=0 --stack_size=512 -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/lib" -i"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="Lab-2B_linkInfo.xml" --rom_model -o "Lab-2B.out" "./sample.obj" "./tm4c1230h6pm_startup_ccs.obj" "/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib" "../tm4c1230h6pm.cmd"  -l"libc.a" 
 <Linking>
-Finished building target: Lab-1.out
+Finished building target: Lab-2B.out
  
 
 **** Build Finished ****

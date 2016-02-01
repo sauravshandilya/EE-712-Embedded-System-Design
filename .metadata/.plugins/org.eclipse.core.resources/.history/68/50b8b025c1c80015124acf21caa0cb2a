@@ -1,0 +1,44 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../tm4c1230h6pm.cmd 
+
+LIB_SRCS += \
+/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib 
+
+ASM_SRCS += \
+../sample.asm 
+
+C_SRCS += \
+../tm4c1230h6pm_startup_ccs.c 
+
+OBJS += \
+./sample.obj \
+./tm4c1230h6pm_startup_ccs.obj 
+
+ASM_DEPS += \
+./sample.pp 
+
+C_DEPS += \
+./tm4c1230h6pm_startup_ccs.pp 
+
+C_DEPS__QUOTED += \
+"tm4c1230h6pm_startup_ccs.pp" 
+
+OBJS__QUOTED += \
+"sample.obj" \
+"tm4c1230h6pm_startup_ccs.obj" 
+
+ASM_DEPS__QUOTED += \
+"sample.pp" 
+
+ASM_SRCS__QUOTED += \
+"../sample.asm" 
+
+C_SRCS__QUOTED += \
+"../tm4c1230h6pm_startup_ccs.c" 
+
+
