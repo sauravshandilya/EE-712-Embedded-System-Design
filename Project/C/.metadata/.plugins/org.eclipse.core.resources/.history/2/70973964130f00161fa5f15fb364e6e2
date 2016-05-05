@@ -1,0 +1,22 @@
+/*
+ * coeff.h
+ *
+ *  Created on: 01-May-2016
+ *      Author: saurav
+ */
+
+#ifndef COEFF_H_
+#define COEFF_H_
+
+// low pass filter coeffs.
+#define R0 34026
+#define R1 10067
+#define R2 6040
+#define R3 4861
+#define R4 4861
+#define R5 6040
+#define R6 10067
+#define R7 34026
+
+
+#endif /* COEFF_H_ */

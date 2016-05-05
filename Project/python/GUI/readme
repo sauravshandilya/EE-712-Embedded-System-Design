@@ -1,0 +1,5 @@
+-- scaling GUI with window size
+	right click on ui in QT and select Layout --> lauyout in form layout
+
+-- Generate python file from .ui (generated from QT)
+	pyuic4 -x uidesign.ui -o design.py

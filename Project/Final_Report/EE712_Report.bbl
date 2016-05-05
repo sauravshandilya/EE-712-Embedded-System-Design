@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{aoe}
+Paul Horowitz and Winfield Hill.
+\newblock {\em The Art Of Electronics}.
+\newblock Cambridge University Press, 2nd edition, 1994.
+
+\bibitem{lfsr_ti}
+John Koeter.
+\newblock What’s an lfsr? - scta036a.
+\newblock Technical report, Texas Instruments, 1996.
+
+\bibitem{lfsr_table}
+Tim~Molteno Roy~Ward.
+\newblock Table of linear feedback shift registers.
+\newblock Technical report, Texas AM University,University of Otago, October
+  26, 2007.
+
+\bibitem{lfsr_wiki}
+Wikipedia Article.
+\newblock Linear feedback shift register.
+\newblock last accessed on 02/05/2016.
+
+\bibitem{dsp}
+E.~C. Ifeachor and B.W. Jervis.
+\newblock {\em Digital Signal Processing}.
+\newblock Pearson Education Ltd., 2002.
+
+\bibitem{tiva}
+Tiva tm4c123gh6pm microcontroller datasheet.
+\newblock Technical report, Texas Instruments, June 12, 2014.
+
+\bibitem{dpot_datasheet}
+Analog Devices.
+\newblock Ad8403 datasheet.
+
+\end{thebibliography}

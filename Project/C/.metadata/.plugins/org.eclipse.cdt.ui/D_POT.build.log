@@ -1,0 +1,20 @@
+
+**** Build of configuration Debug for project D_POT ****
+
+/opt/ti/ccsv6/utils/bin/gmake -k all 
+Building file: ../deletethis_nouse.c
+Invoking: ARM Compiler
+"/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.5/include" --include_path="/opt/ti/TivaWare_C_Series-2.1.2.111" -g --gcc --define=ccs="ccs" --define=PART_IS_BLIZZARD_RB1 --define=PART_TM4C123GH6PM --display_error_number --diag_warning=225 --diag_wrap=off --preproc_with_compile --preproc_dependency="deletethis_nouse.pp"  "../deletethis_nouse.c"
+"../deletethis_nouse.c", line 63: warning #169-D: argument of type "int" is incompatible with parameter of type "uint32_t *"
+"../deletethis_nouse.c", line 63: warning #154-D: conversion of nonzero integer to pointer
+"../deletethis_nouse.c", line 63: warning #169-D: argument of type "int" is incompatible with parameter of type "uint32_t *"
+"../deletethis_nouse.c", line 63: warning #154-D: conversion of nonzero integer to pointer
+
+>> Compilation failure
+"../deletethis_nouse.c", line 225: error #20: identifier "GPIO_PCTL_PA0_U0RX" is undefined
+"../deletethis_nouse.c", line 226: error #20: identifier "GPIO_PCTL_PA1_U0TX" is undefined
+2 errors detected in the compilation of "../deletethis_nouse.c".
+gmake: *** [deletethis_nouse.obj] Error 1
+gmake: Target `all' not remade because of errors.
+
+**** Build Finished ****

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;D_POT/Integratedcode_PRNG.c&apos; to &apos;deletethis_nouse.c&apos;" description="Rename resource &apos;Integratedcode_PRNG.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Integratedcode_PRNG.c" name="deletethis_nouse.c" stamp="1461915095403" updateReferences="true"/>
+</session>

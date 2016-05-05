@@ -1,0 +1,19 @@
+/*
+ * coeff.h
+ *
+ *  Created on: 01-May-2016
+ *      Author: saurav
+ */
+
+#ifndef COEFF_H_
+#define COEFF_H_
+
+#define R0 34000
+#define R1
+#define R2
+#define R3
+#define R4
+#define R5
+#define R6
+#define R7
+#endif /* COEFF_H_ */

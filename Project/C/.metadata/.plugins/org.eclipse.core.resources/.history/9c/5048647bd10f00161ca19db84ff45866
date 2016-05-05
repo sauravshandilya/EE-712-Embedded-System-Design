@@ -1,0 +1,42 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../tm4c123gh6pm.cmd 
+
+LIB_SRCS += \
+/opt/ti/TivaWare_C_Series-2.1.2.111/driverlib/ccs/Debug/driverlib.lib 
+
+C_SRCS += \
+../delay.c \
+../main.c \
+../tm4c123gh6pm_startup_ccs.c 
+
+OBJS += \
+./delay.obj \
+./main.obj \
+./tm4c123gh6pm_startup_ccs.obj 
+
+C_DEPS += \
+./delay.pp \
+./main.pp \
+./tm4c123gh6pm_startup_ccs.pp 
+
+C_DEPS__QUOTED += \
+"delay.pp" \
+"main.pp" \
+"tm4c123gh6pm_startup_ccs.pp" 
+
+OBJS__QUOTED += \
+"delay.obj" \
+"main.obj" \
+"tm4c123gh6pm_startup_ccs.obj" 
+
+C_SRCS__QUOTED += \
+"../delay.c" \
+"../main.c" \
+"../tm4c123gh6pm_startup_ccs.c" 
+
+

@@ -1,0 +1,50 @@
+/*
+ * lfsr_varaiblefreq.c
+ *
+ *  Created on: 30-Apr-2016
+ *      Author: saurav
+ */
+#include "commonheader.h"
+
+void Timer0IntHandler(void)
+{
+	// Clear the timer interrupt
+	TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+	// Read the current state of the GPIO pin and
+	// write back the opposite state
+	if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_2))
+	{
+		GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, 0);
+	}
+	else
+	{
+		GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 4);
+	}
+}
+
+void UARTIntHandler(void)
+{
+	while ()
+}
+int main(void)
+{
+	uint32_t ui32Period = 20000;
+	SysCtlClockSet(SYSCTL_SYSDIV_5|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+	GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);	// enable Timer 0
+	TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);		// timer0 configure mode as periodic - down counting
+	TimerLoadSet(TIMER0_BASE, TIMER_A, ui32Period -1);		// Load value from which counting will start
+	IntEnable(INT_TIMER0A);									// Enable Tiemr0A interrupt
+	TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);		// Enable timer interrupt source - Timer A timeout interrupt
+	IntMasterEnable();										// Enable Interrupt
+	TimerEnable(TIMER0_BASE, TIMER_A);						// Enable Timer
+	while(1)
+	{
+
+	}
+}
+
+

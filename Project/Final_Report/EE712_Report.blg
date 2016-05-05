@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: EE712_Report.aux
+The style file: unsrt.bst
+Database file #1: EE712_reference.bib
+You're missing a field name---line 7 of file EE712_reference.bib
+ :  
+ :  %address   = "New York"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 15 of file EE712_reference.bib
+ :  
+ :  %address   = "New Jersey"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty author in tiva
+Warning--empty note in dpot_datasheet
+(There were 2 error messages)

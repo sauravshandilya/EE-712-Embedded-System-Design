@@ -1,0 +1,111 @@
+/*
+ * lfsr_varaiblefreq.c
+ *
+ *  Created on: 30-Apr-2016
+ *      Author: saurav
+ */
+#include "commonheader.h"
+volatile char count = 0;
+volatile uint32_t timerperiod = 0;
+
+// LFSR related variables
+unsigned start_state = 0x0001;  /* Any nonzero start state will work. */
+unsigned lfsr = 0;
+unsigned period = 0;
+unsigned a = 0 ;
+unsigned char clck = 0xFF;
+uint32_t ui32Period = 400000;
+
+void Timer0IntHandler(void)
+{
+	// Clear the timer interrupt
+	TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+	// Read the current state of the GPIO pin and
+	// write back the opposite state
+	count = ~count;
+	GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_2, count);
+
+}
+
+void timer0_init(void)
+{
+	timerperiod = 390;
+	SysCtlClockSet(SYSCTL_SYSDIV_4|SYSCTL_USE_PLL|SYSCTL_XTAL_16MHZ|SYSCTL_OSC_MAIN);
+	//period = SysCtlClockGet();
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);			// enable Timer 0
+	TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);		// timer0 configure mode as periodic - down counting
+	TimerLoadSet(TIMER0_BASE, TIMER_A, timerperiod -1);		// Load value from which counting will start
+	IntEnable(INT_TIMER0A);									// Enable Tiemr0A interrupt
+	TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);		// Enable timer interrupt source - Timer A timeout interrupt
+	IntMasterEnable();										// Enable Interrupt
+	TimerEnable(TIMER0_BASE, TIMER_A);						// Enable Timer
+}
+
+// LFSR
+void glaois_lfsr(unsigned bit)
+{
+	unsigned value = 0;
+	unsigned char x;
+
+	lfsr = start_state;
+    switch (bit)
+    {
+    	case 4 :			// Primitive polynomial: x^4 + x^3 + 1
+    		//value = 0xc;
+    		value = ((1<<(4-1))|(1<<(3-1)));
+    		break;
+
+    	case 8 :			// Primitive polynomial: x^8 + x^6 + x^5 + x^4 + 1
+    		//value = 0xB8;
+    		value = ((1<<(8-1))|(1<<(6-1))|(1<<(5-1))|(1<<(4-1)));
+    	    break;
+
+    	case 16 :			// Primitive polynomial: x^16 + x^14 + x^13 + x^11 + 1
+    		//value = 0xB400;
+    		value = ((1<<(16-1))|(1<<(14-1))|(1<<(13-1))|(1<<(11-1)));
+    	    break;
+
+    	case 32 :			// Primitive polynomial: x^32 + x^30 + x^26 + x^25 + 1
+    		value = ((1<<(32-1))|(1<<(30-1))|(1<<(26-1))|(1<<(25-1)));
+    	    break;
+
+    	default :
+    		value = 0xc;
+    }
+
+	do
+    {
+        unsigned lsb = lfsr & 1;   /* Get LSB (i.e., the output bit). */
+        a = -lsb;
+        if (lsb == 0)					// if last bit is zero , only shift
+        	lfsr >>= 1;                /* Shift register */
+        else							// if last bit is 1 shift and xor
+        {
+        	lfsr >>= 1;                /* Shift register */
+        	lfsr ^= (-lsb) & value;
+        }
+        ++period;
+        x = (unsigned char)(lfsr);
+        GPIOPinWrite(GPIO_PORTB_BASE,0xFF,x);
+    } while (lfsr != start_state);
+}
+
+int main(void)
+{
+	timer0_init();
+	//uart_init();
+	//SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+	//GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
+	GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, GPIO_PIN_2);
+	//glaois_lfsr(32);
+
+	while(1)
+	{
+
+		//count = ~count;
+		//GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3, count);
+	}
+}
+
+
