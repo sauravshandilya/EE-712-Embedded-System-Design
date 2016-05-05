@@ -1,0 +1,12 @@
+TI ARM Assembler Unix v5.2.5 Mon Jan 25 14:54:41 2016
+
+Tools Copyright (c) 1996-2015 Texas Instruments Incorporated
+../lab-2b.asm                                                        PAGE    1
+
+       1 00000000           .thumb
+       2 00000000                   .text
+       3                            .align 2
+       4                    
+       5 00000000 400253FC  GPIO_PORTF_DATA_R .field 0x400253FC,32
+
+No Assembly Errors, No Assembly Warnings
